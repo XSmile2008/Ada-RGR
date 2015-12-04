@@ -14,7 +14,7 @@ with Methods; use Methods;
 
 procedure main is
    package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
-   use Float_Functions;--nyan
+   use Float_Functions;
 
    procedure testIO is
       scheme : TScheme;
@@ -70,7 +70,7 @@ procedure main is
       Put_Line("-----------------------------------------------");
    end;
 
---     plan : TPlan;
+     --plan : TPlan;
 begin
 --     plan.x := (others => 0);
 --     plan.b := (1|3|4|5 => False, others => True);
@@ -85,6 +85,4 @@ begin
 
    testSchemePar;
    --testSchemeParSeq;
-   --plan := 117;
-   --showPlan(plan, 1, 20);
 end;
