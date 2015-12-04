@@ -1,4 +1,9 @@
 *.o
 *.ali
 *.exe
+b__*.adb
+b__*.ads
+auto.cgpr
 main
+main.bexch
+gnatinspect.db
