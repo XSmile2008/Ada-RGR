@@ -14,7 +14,7 @@ with Methods; use Methods;
 
 procedure main is
    package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
-   use Float_Functions;
+   use Float_Functions;--nyan
 
    procedure testIO is
       scheme : TScheme;

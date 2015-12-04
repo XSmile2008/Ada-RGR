@@ -6,4 +6,4 @@ b__*.ads
 auto.cgpr
 main
 main.bexch
-gnatinspect.db
+gnatinspect.*
