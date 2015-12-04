@@ -1,0 +1,22 @@
+[MAPPING FILE]
+/private/var/folders/qv/gm3dqf8d5f78jmv5nyqm87n40000gn/T/GNAT-TEMP-000003.TMP
+[TOOLCHAIN VERSION]
+ada
+GNAT 2015
+[MAIN BASE NAME]
+plan
+[COMPILER PATH]
+/users/vladstarikov/applications/gnat/bin/gcc
+[COMPILER LEADING SWITCHES]
+-c
+-x
+ada
+-gnatA
+[MAIN DEPENDENCY FILE]
+/Users/vladstarikov/Dropbox/Courses/SMRZ_v_SP/Ada/rgr1/plan.ali
+[DEPENDENCY FILES]
+[BINDING OPTIONS]
+gnatbind_prefix=
+[PROJECT FILES]
+/Users/vladstarikov/Dropbox/Courses/SMRZ_v_SP/Ada/rgr1/rgr1.gpr
+20151126231913

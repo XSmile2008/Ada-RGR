@@ -1,0 +1,8 @@
+project Rgr1 is
+
+   for Main use ("main.adb");
+   for Source_Files use ("main.adb", "methods.adb", "methods.ads", "plan.adb", "plan.ads", "scheme.ads", "scheme-func.adb", "scheme-func.ads", "scheme-io.adb", "scheme-io.ads", "scheme-par_seq.ads", "scheme-par_seq-func.adb", 
+      "scheme-par_seq-func.ads", "scheme-par_seq-io.adb", "scheme-par_seq-io.ads", "test_io.adb", "test_io.ads");
+
+end Rgr1;
+
