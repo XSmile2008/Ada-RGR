@@ -6,7 +6,7 @@ with Ada.Numerics.Generic_Elementary_Functions;
 
 package Scheme is
 
-   type TSchemeType is (TPar, TSeq, TPar_Seq);
+   type TSchemeType is (TPar, TSeq, TParSeq);
 
    type TNode is Record
       l, ls, c : Integer;
@@ -16,6 +16,7 @@ package Scheme is
    type TSchemeSizes is array (1..20) of Integer;
 
    type TScheme is Record
+      schemeType : TSchemeType;
       m, c, n : Integer;
       ni : TSchemeSizes;
       nodes : TNodeMas;

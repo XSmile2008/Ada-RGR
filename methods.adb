@@ -1,7 +1,7 @@
 package body Methods is
 
-   function bruteForce(scheme : in TScheme; schemeType : in TSchemeType; tests : in TTests; plan : TPlan) return TPlan is
-      maxLifeTime : Float := lifeTime(scheme, schemeType, tests, plan);
+   function bruteForce(scheme : in TScheme; tests : in TTests; plan : TPlan) return TPlan is
+      maxLifeTime : Float := lifeTime(scheme, tests, plan);
       maxPlan : TPlan := plan;
       currPlan : TPlan := plan;
       currLifeTime : Float;
@@ -9,7 +9,7 @@ package body Methods is
       while hasNext(currPlan) loop
          currPlan := getNext(currPlan);
          if (checkBudget(scheme, currPlan)) then
-            currLifeTime := lifeTime(scheme, schemeType, tests, currPlan);
+            currLifeTime := lifeTime(scheme, tests, currPlan);
             if (currLifeTime > maxLifeTime) then
                maxLifeTime := currLifeTime;
                maxPlan := currPlan;

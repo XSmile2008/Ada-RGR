@@ -9,5 +9,5 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
 package Methods is
-   function bruteForce(scheme : in TScheme; schemeType : in TSchemeType; tests : in TTests; plan : TPlan) return TPlan;
+   function bruteForce(scheme : in TScheme; tests : in TTests; plan : TPlan) return TPlan;
 end;

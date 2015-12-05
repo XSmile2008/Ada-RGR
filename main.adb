@@ -9,21 +9,26 @@ with Test_IO; use Test_IO;
 with Plan; use Plan;
 with Methods; use Methods;
 
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+
 procedure main is
    package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
    use Float_Functions;
 
-
+   schemeType : TSchemeType := TParSeq;
+   schemeTypeString : Unbounded_String;
+   path : String := "variants/";
+   variant : String := "01";
 
    procedure testIO is
       scheme : TScheme;
       tests: TTests;
    begin
-      scheme := readScheme("variants/par_01.dat");
+      scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
       showScheme(scheme);
       Put_Line("-----------------------------------------------");
 
-      tests := readTests("variants/par_01.tet");
+      tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
       showTests(tests);
       Put_Line("-----------------------------------------------");
    end;
@@ -36,22 +41,23 @@ procedure main is
    begin
       plan.x := (others => 0);
       plan.b := (others => False);
-      scheme := readScheme("variants/par_01.dat");
-      showScheme(scheme);
-      Put_Line("-----------------------------------------------");
-      tests := readTests("variants/par_01.tet");
-      --showTests(tests);
-      --Put_Line("-----------------------------------------------");
-      time := lifeTime(scheme, TPar, tests, plan);
-      showLifeTime(plan, time, scheme);
+      scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
+      tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
+      showScheme(scheme);Put_Line("-----------------------------------------------");
+      --showTests(tests);Put_Line("-----------------------------------------------");
+      time := lifeTime(scheme, tests, plan);
+      showLifeTime( scheme, plan, time);
       New_Line;Put_Line("-----------------------------------------------");
-      plan := Methods.bruteForce(scheme, TPar, tests, plan);
+      --plan := Methods.bruteForce(scheme, tests, plan);
       New_Line;Put_Line("-----------------------------------------------");
       showPlan(plan, scheme);
    end;
 
-     --plan : TPlan;
+   --plan : TPlan;
 begin
+   if (schemeType = TPar) then schemeTypeString := To_Unbounded_String("par");
+   elsif (schemeType = TSeq) then schemeTypeString := To_Unbounded_String("seq");
+   else schemeTypeString := To_Unbounded_String("par_seq"); end if;
 --     plan.x := (others => 0);
 --     plan.b := (1|3|4|5 => False, others => True);
 --
@@ -63,6 +69,6 @@ begin
 --           plan := getNext(plan);
 --     end loop;
 
-   testSchemePar;
-   --testSchemeParSeq;
+   --testIO;
+   testScheme;
 end;

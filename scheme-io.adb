@@ -1,9 +1,11 @@
 package body Scheme.IO is
 
-   function readScheme (filename : in String) return TScheme is
+   function readScheme (filename : in String; schemeType : TSchemeType) return TScheme is
       fileType : File_Type;
       scheme: TScheme;
    begin
+      if (schemeType = TParSeq) then return readSchemeParSeq(filename, schemeType); end if;
+      scheme.schemeType := schemeType;
       Open(File => fileType, Mode => In_File, Name => fileName);
       Get(fileType, scheme.m);
       skip_line(fileType);
@@ -22,38 +24,42 @@ package body Scheme.IO is
 
    procedure showScheme (scheme : in TScheme) is
    begin
-      Put("m = ");
-      Put(scheme.m);
-      new_line;
-      new_line;
-      for i in 1..scheme.m loop
-         Put(scheme.nodes(i).l);
-         Put(scheme.nodes(i).ls);
-         Put(scheme.nodes(i).c);
+      if (scheme.schemeType = TParSeq) then showSchemeParSeq(scheme);
+      else
+         Put("m = ");
+         Put(scheme.m);
          new_line;
-      end loop;
-      new_line;
-      Put(scheme.c);
-      new_line;
-      Put(scheme.n);
-      new_line;
+         new_line;
+         for i in 1..scheme.m loop
+            Put(scheme.nodes(i).l);
+            Put(scheme.nodes(i).ls);
+            Put(scheme.nodes(i).c);
+            new_line;
+         end loop;
+         new_line;
+         Put(scheme.c);
+         new_line;
+         Put(scheme.n);
+         new_line;
+      end if;
    end;
 
    --TODO: to File
-   procedure showLifeTime (x : in TPlan; lifeTime : in Float; scheme : in TScheme) is
+   procedure showLifeTime ( scheme : in TScheme; plan : in TPlan; lifeTime : in Float) is
    begin
-      showPlan(x, scheme);
+      showPlan(plan, scheme);
       New_Line;
       Put(lifeTime);
    end;
 
------------------------------------------------------------------------ParSec------------------------------------------
+   -----------------------------------------------------------------------ParSec------------------------------------------
 
-   function readSchemeParSec (filename : in String) return TScheme is
+   function readSchemeParSeq (filename : in String; schemeType : TSchemeType) return TScheme is
       fileType : File_Type;
       scheme : TScheme;
       index : Integer := 1;
    begin
+      scheme.schemeType := schemeType;
       Open(File => fileType, Mode => In_File, Name => fileName);
       Get(fileType, scheme.m);
       skip_line(fileType);
@@ -75,7 +81,7 @@ package body Scheme.IO is
       return scheme;
    end;
 
-   procedure showSchemeParSec (scheme : in TScheme) is
+   procedure showSchemeParSeq (scheme : in TScheme) is
       index : Integer := 1;
    begin
       Put("m = ");

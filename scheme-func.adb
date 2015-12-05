@@ -2,7 +2,7 @@ package body Scheme.Func is
    package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
    use Float_Functions;
 
-   function lifeTime (scheme : in TScheme; schemeType : in TSchemeType; tests : in TTests; plan : in TPlan) return Float is
+   function lifeTime (scheme : in TScheme; tests : in TTests; plan : in TPlan) return Float is
       minORmax, sum, txtau : Float;
 
       function t (i, k : in Integer) return Float is
@@ -16,12 +16,13 @@ package body Scheme.Func is
       end;
 
    begin
+      if (scheme.schemeType = TParSeq) then return lifeTimeParSeq(scheme, tests, plan); end if;
       sum := 0.0;
       for k in 1..tests'Length loop
          minORmax := t(1, k) + Float(plan.x(1)) * tau(1, k);
          for i in 2..scheme.m loop
             txtau := t(i, k) + Float(plan.x(i)) * tau(i, k);
-            if (((txtau > minORmax) and (schemeType = TPar)) or ((txtau < minORmax) and (schemeType = TSeq))) then
+            if (((txtau > minORmax) and (scheme.schemeType = TPar)) or ((txtau < minORmax) and (scheme.schemeType = TSeq))) then
                minORmax := txtau;
             end if;
          end loop;
@@ -33,6 +34,7 @@ package body Scheme.Func is
    function checkBudget (scheme : in TScheme; plan : in TPlan) return Boolean is
       sum : Integer := 0;
    begin
+      if (scheme.schemeType = TParSeq) then return checkBudgetParSeq(scheme, plan); end if;
       for i in 1..scheme.m loop
          sum := sum + scheme.nodes(i).c * plan.x(i);
       end loop;
@@ -41,7 +43,7 @@ package body Scheme.Func is
 
 ------------------------------------------------------------------ParSec----------------------------------------------------------------
 
-   function lifeTimeParSec (scheme : in TScheme;  schemeType : in TSchemeType; tests : in TTests; plan : in TPlan) return Float is
+   function lifeTimeParSeq (scheme : in TScheme; tests : in TTests; plan : in TPlan) return Float is
       min, max, sum, txtau : Float;
 
       function t (i, j, k : in Integer) return Float is
@@ -71,7 +73,7 @@ package body Scheme.Func is
       return sum;
    end;
 
-   function checkBudgetParSec (scheme : in TScheme; plan : in TPlan) return Boolean is
+   function checkBudgetParSeq (scheme : in TScheme; plan : in TPlan) return Boolean is
       sum : Integer := 0;
    begin
       for i in 1..scheme.m loop
