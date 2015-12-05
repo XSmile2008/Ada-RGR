@@ -5,9 +5,6 @@ with Ada.Numerics.Generic_Elementary_Functions;
 with Scheme; use Scheme;
 with Scheme.IO; use Scheme.IO;
 with Scheme.Func; use Scheme.Func;
-with Scheme.Par_Seq; use Scheme.Par_Seq;
-with Scheme.Par_Seq.IO; use Scheme.Par_Seq.IO;
-with Scheme.Par_Seq.Func; use Scheme.Par_Seq.Func;
 with Test_IO; use Test_IO;
 with Plan; use Plan;
 with Methods; use Methods;
@@ -16,9 +13,10 @@ procedure main is
    package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
    use Float_Functions;
 
+
+
    procedure testIO is
       scheme : TScheme;
-      schemeParSeq : TSchemeParSeq;
       tests: TTests;
    begin
       scheme := readScheme("variants/par_01.dat");
@@ -28,13 +26,9 @@ procedure main is
       tests := readTests("variants/par_01.tet");
       showTests(tests);
       Put_Line("-----------------------------------------------");
-
-      schemeParSeq := Par_Seq.IO.readScheme("variants/par_seq_01.dat");
-      Par_Seq.IO.showScheme(schemeParSeq);
-      Put_Line("-----------------------------------------------");
    end;
 
-   procedure testSchemePar is
+   procedure testScheme is
       scheme : TScheme;
       tests: TTests;
       plan : TPlan;
@@ -54,20 +48,6 @@ procedure main is
       plan := Methods.bruteForce(scheme, TPar, tests, plan);
       New_Line;Put_Line("-----------------------------------------------");
       showPlan(plan, scheme);
-   end;
-
-   procedure testSchemeParSeq is
-      scheme : TSchemeParSeq;
-      tests : TTests;
-      --plan : TPlan;
-      --time : Float;
-   begin
-      scheme := readScheme("variants/par_seq_01.dat");
-      showScheme(scheme);
-      Put_Line("-----------------------------------------------");
-      tests := readTests("variants/par_seq_01.tet");
-      --showTests(tests);
-      Put_Line("-----------------------------------------------");
    end;
 
      --plan : TPlan;

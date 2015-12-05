@@ -30,26 +30,14 @@ package body Plan is
       return 2**bits;
    end;
 
-   procedure showPlan(plan : in TPlan; scheme : in TScheme) is
+   procedure showPlan(plan : in TPlan; scheme : in TScheme) is --TODO: make for ParSec
    begin
       for i in 1..scheme.m loop
          Put(plan.x(i));
       end loop;
    end;
 
-   procedure showPlan(plan : in TPlan; scheme : in TSchemeParSeq) is
-      temp : Integer := 0;
-   begin
-      for i in 1..scheme.m loop
-         temp := temp + scheme.ni(i);
-         for j in 1..scheme.ni(i) loop
-            Put(plan.x(temp + j));
-         end loop;
-         New_Line;
-      end loop;
-   end;
-
-   function index2d1d (scheme : TSchemeParSeq; index_i, index_j : Integer) return Integer is
+   function index2d1d (scheme : TScheme; index_i, index_j : Integer) return Integer is
       index : Integer := 0;
    begin
       for i in 1..index_i - 1 loop

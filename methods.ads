@@ -1,9 +1,6 @@
 with Scheme; use Scheme;
 with Scheme.IO; use Scheme.IO;
 with Scheme.Func; use Scheme.Func;
-with Scheme.Par_Seq; use Scheme.Par_Seq;
-with Scheme.Par_Seq.IO; use Scheme.Par_Seq.IO;
-with Scheme.Par_Seq.Func; use Scheme.Par_Seq.Func;
 with Test_IO; use Test_IO;
 with Plan; use Plan;
 

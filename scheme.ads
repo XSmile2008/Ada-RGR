@@ -13,9 +13,11 @@ package Scheme is
    end record;
 
    type TNodeMas is array (1..20) of TNode;
+   type TSchemeSizes is array (1..20) of Integer;
 
    type TScheme is Record
       m, c, n : Integer;
+      ni : TSchemeSizes;
       nodes : TNodeMas;
    end record;
 end;

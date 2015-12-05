@@ -47,6 +47,59 @@ package body Scheme.IO is
       Put(lifeTime);
    end;
 
+-----------------------------------------------------------------------ParSec------------------------------------------
+
+   function readSchemeParSec (filename : in String) return TScheme is
+      fileType : File_Type;
+      scheme : TScheme;
+      index : Integer := 1;
+   begin
+      Open(File => fileType, Mode => In_File, Name => fileName);
+      Get(fileType, scheme.m);
+      skip_line(fileType);
+      for i in 1..scheme.m loop
+         Get(fileType, scheme.ni(i));
+         skip_line(fileType);
+         for j in 1..scheme.ni(i) loop
+            Get(fileType, scheme.nodes(index).l);
+            Get(fileType, scheme.nodes(index).ls);
+            Get(fileType, scheme.nodes(index).c);
+            index := index + 1;
+            skip_line(fileType);
+         end loop;
+      end loop;
+      Get(fileType, scheme.c);
+      skip_line(fileType);
+      Get(fileType, scheme.n);
+      close(fileType);
+      return scheme;
+   end;
+
+   procedure showSchemeParSec (scheme : in TScheme) is
+      index : Integer := 1;
+   begin
+      Put("m = ");
+      Put(scheme.m);
+      new_line;
+      new_line;
+      for i in 1..scheme.m loop
+         Put("ni = "); Put(scheme.ni(i));
+         new_line;
+         for j in 1..scheme.ni(i) loop
+            Put(scheme.nodes(index).l);
+            Put(scheme.nodes(index).ls);
+            Put(scheme.nodes(index).c);
+            index := index + 1;
+            new_line;
+         end loop;
+      end loop;
+      new_line;
+      Put(scheme.c);
+      new_line;
+      Put(scheme.n);
+      new_line;
+   end;
+
 begin
    null;
 end;
