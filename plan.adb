@@ -37,8 +37,8 @@ package body Plan is
          for i in 1..scheme.m loop
             for j in 1..scheme.ni(i) loop
                Put(plan.x(index));
+               index := index + 1;
             end loop;
-            index := index + 1;
             New_Line;
          end loop;
       else

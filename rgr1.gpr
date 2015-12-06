@@ -1,6 +1,22 @@
 project Rgr1 is
 
    for Main use ("main.adb");
+   for Source_Files use ("main.adb", "methods.adb", "methods.ads", "plan.adb", "plan.ads", "scheme.ads", "scheme-func.adb", "scheme-func.ads", "scheme-io.adb", "scheme-io.ads", "test_io.adb", "test_io.ads");
+
+   package Builder is
+      for Default_Switches ("ada") use ("-g");
+   end Builder;
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-g");
+   end Compiler;
+
+   package Linker is
+      for Default_Switches ("ada") use ("-g");
+   end Linker;
+
+   package Pretty_Printer is
+   end Pretty_Printer;
 
 end Rgr1;
 

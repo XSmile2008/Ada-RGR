@@ -32,16 +32,22 @@ package body Scheme.Func is
    end;
 
    function checkBudget (scheme : in TScheme; plan : in TPlan) return Boolean is
+      m : Integer := scheme.m;
       sum : Integer := 0;
    begin
-      if (scheme.schemeType = TParSeq) then return checkBudgetParSeq(scheme, plan); end if;
-      for i in 1..scheme.m loop
+      if (scheme.schemeType = TParSeq) then
+         m := 0;
+         for i in 1..scheme.m loop
+            m := m + scheme.ni(i);
+         end loop;
+      end if;
+      for i in 1..m loop
          sum := sum + scheme.nodes(i).c * plan.x(i);
       end loop;
       return sum <= scheme.c;
    end;
 
-------------------------------------------------------------------ParSec----------------------------------------------------------------
+   ------------------------------------------------------------------ParSec----------------------------------------------------------------
 
    function lifeTimeParSeq (scheme : in TScheme; tests : in TTests; plan : in TPlan) return Float is
       min, max, sum, txtau : Float;
@@ -61,8 +67,8 @@ package body Scheme.Func is
       for k in 1..100 loop
          max := 0.0;
          for i in 1..scheme.m loop
-            min := 0.0;
-            for j in 1..scheme.ni(i) loop
+            min := t(i,1,k) + Float(plan.x(index2d1d(scheme, i, 1))) * tau(i, 1, k);
+            for j in 2..scheme.ni(i) loop
                txtau := t(i,j,k) + Float(plan.x(index2d1d(scheme, i, j))) * tau(i, j, k);
                if (txtau < min) then min := txtau; end if;
             end loop;
@@ -71,17 +77,6 @@ package body Scheme.Func is
          sum := sum + max;
       end loop;
       return sum;
-   end;
-
-   function checkBudgetParSeq (scheme : in TScheme; plan : in TPlan) return Boolean is
-      sum : Integer := 0;
-   begin
-      for i in 1..scheme.m loop
-         for j in 1..scheme.ni(i) loop
-            sum := sum + scheme.nodes(index2d1d(scheme, i, j)).c * plan.x(index2d1d(scheme, i, j));
-         end loop;
-      end loop;
-      return sum <= scheme.c;
    end;
 
 begin
