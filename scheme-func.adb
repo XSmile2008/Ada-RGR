@@ -18,7 +18,7 @@ package body Scheme.Func is
    begin
       if (scheme.schemeType = TParSeq) then return lifeTimeParSeq(scheme, tests, plan); end if;
       sum := 0.0;
-      for k in 1..tests'Length loop
+      for k in tests'Range loop
          minORmax := t(1, k) + Float(plan.x(1)) * tau(1, k);
          for i in 2..scheme.m loop
             txtau := t(i, k) + Float(plan.x(i)) * tau(i, k);
@@ -28,7 +28,7 @@ package body Scheme.Func is
          end loop;
          sum := sum + minORmax;
       end loop;
-      return sum / 100.0;
+      return sum / Float(tests'Length);
    end;
 
    function checkBudget (scheme : in TScheme; plan : in TPlan) return Boolean is
@@ -64,7 +64,7 @@ package body Scheme.Func is
 
    begin
       sum := 0.0;
-      for k in 1..100 loop
+      for k in tests'Range loop
          max := 0.0;
          for i in 1..scheme.m loop
             min := t(i,1,k) + Float(plan.x(index2d1d(scheme, i, 1))) * tau(i, 1, k);
@@ -76,7 +76,7 @@ package body Scheme.Func is
          end loop;
          sum := sum + max;
       end loop;
-      return sum;
+      return sum / Float(tests'Length);
    end;
 
 begin

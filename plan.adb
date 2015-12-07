@@ -1,8 +1,8 @@
 package body Plan is
 
-   function hasNext(Plan : in TPlan) return Boolean is
+   function hasNext(plan : in TPlan) return Boolean is
    begin
-      for i in 1..20 loop
+      for i in plan.x'Range loop
          if (plan.x(i) = 0 and plan.b(i) = False) then return True; end if;
       end loop;
       return False;

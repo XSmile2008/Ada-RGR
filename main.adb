@@ -15,7 +15,7 @@ procedure main is
    package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
    use Float_Functions;
 
-   schemeType : TSchemeType := TParSeq;
+   schemeType : TSchemeType := TSeq;
    schemeTypeString : Unbounded_String;
    path : String := "variants/";
    variant : String := "01";
@@ -40,7 +40,7 @@ procedure main is
       time : Float;
    begin
       plan.x := (others => 0);
-      plan.b := (others => False);--TODO: block unused for this size of scheme
+      plan.b := (11..20 => True, others => False);--TODO: block unused for this size of scheme
       scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
       tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
       showScheme(scheme);Put_Line("-----------------------------------------------");
@@ -58,17 +58,7 @@ begin
    if (schemeType = TPar) then schemeTypeString := To_Unbounded_String("par");
    elsif (schemeType = TSeq) then schemeTypeString := To_Unbounded_String("seq");
    else schemeTypeString := To_Unbounded_String("par_seq"); end if;
-   --     plan.x := (others => 0);
-   --     plan.b := (1|3|4|5 => False, others => True);
-   --
-   --     while (hasNext(plan)) loop
-   --        New_Line;
-   --        for i in 1..20 loop
-   --           Put(plan.x(i));
-   --        end loop;
-   --           plan := getNext(plan);
-   --     end loop;
 
-   --testIO;
-   testScheme;
+   testIO;
+   --testScheme;
 end;
