@@ -20,19 +20,6 @@ procedure main is
    path : String := "variants/";
    variant : String := "01";
 
-   procedure testIO is
-      scheme : TScheme;
-      tests: TTests;
-   begin
-      scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
-      showScheme(scheme);
-      Put_Line("-----------------------------------------------");
-
-      tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
-      showTests(tests);
-      Put_Line("-----------------------------------------------");
-   end;
-
    procedure testScheme is
       scheme : TScheme;
       tests: TTests;
@@ -40,25 +27,26 @@ procedure main is
       time : Float;
    begin
       plan.x := (others => 0);
-      plan.b := (11..20 => True, others => False);--TODO: block unused for this size of scheme
+      plan.b := (19..20 => True, others => False);--TODO: block unused for this size of scheme
+
       scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
       tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
       showScheme(scheme);Put_Line("-----------------------------------------------");
       --showTests(tests);Put_Line("-----------------------------------------------");
+
       time := lifeTime(scheme, tests, plan);
       showLifeTime( scheme, plan, time);
       New_Line;Put_Line("-----------------------------------------------");
-      plan := Methods.bruteForce(scheme, tests, plan);
+
+      --plan := Methods.bruteForce(scheme, tests, plan);
+      plan := Methods.bruteForceMultiThreaded(scheme, tests, plan, 4);
       New_Line;Put_Line("-----------------------------------------------");
       showPlan(plan, scheme);
    end;
 
-   --plan : TPlan;
 begin
    if (schemeType = TPar) then schemeTypeString := To_Unbounded_String("par");
    elsif (schemeType = TSeq) then schemeTypeString := To_Unbounded_String("seq");
    else schemeTypeString := To_Unbounded_String("par_seq"); end if;
-
-   testIO;
-   --testScheme;
+   testScheme;
 end;

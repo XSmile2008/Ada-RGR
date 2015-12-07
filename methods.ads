@@ -10,4 +10,5 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
 package Methods is
    function bruteForce(scheme : in TScheme; tests : in TTests; plan : TPlan) return TPlan;
+   function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan;
 end;
