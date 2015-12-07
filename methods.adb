@@ -21,6 +21,27 @@ package body Methods is
 
    function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan is
 
+      protected manager is
+         procedure putResult(plan : in TPlan; lifeTime : in Float);
+         procedure getResult(plan : out; lifeTime : out Float);
+      private
+         maxPlan : TPlan;
+         maxLifeTime : Integer;
+      end manager;
+
+      protected body manager is
+         procedure putResult(plan : in TPlan; lifeTime : in Float) is
+         begin
+         end;
+
+         procedure getResult(plan : out; lifeTime : out Float) is
+         begin
+         end;
+      end manager;
+
+
+
+
       task type bruteForceTask is
          entry Start(plan : in TPlan);
          entry Result(plan : out TPlan);
