@@ -27,7 +27,7 @@ procedure main is
       time : Float;
    begin
       plan.x := (others => 0);
-      plan.f := (others => False);--TODO: block unused for this size of scheme
+      plan.fixed := 0;--TODO: block unused for this size of scheme
 
       scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
       tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
@@ -44,9 +44,24 @@ procedure main is
       showPlan(plan, scheme);
    end;
 
+   procedure testPlan is
+      plan : TPlan;
+      scheme : TScheme;
+   begin
+      scheme.schemeType := TPar;
+      scheme.m := 20;
+      plan.x := (others => 0);
+      plan.fixed := 12;
+      for i in 1..16 loop
+         New_Line;showPlan(plan, scheme);
+         plan := getNext(plan);
+      end loop;
+   end;
+
 begin
    if (schemeType = TPar) then schemeTypeString := To_Unbounded_String("par");
    elsif (schemeType = TSeq) then schemeTypeString := To_Unbounded_String("seq");
    else schemeTypeString := To_Unbounded_String("par_seq"); end if;
    testScheme;
+   --testPlan;
 end;

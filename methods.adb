@@ -22,6 +22,54 @@ package body Methods is
       return maxPlan;
    end;
 
+   function branchAndEdge(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan is
+
+      maxPlan : TPlan := plan;
+      maxLow : Float := lifeTime(scheme, tests, plan);
+      maxHigh : Float := maxLow;
+
+      function recurcive(plan : in TPlan) return TPlan is
+
+         type TBranches is array (0..1) of TPlan;
+         branches : TBranches;
+         branchesCount := 1;
+         tempPlan : TPlan;
+         tempLifeTime : Float;
+      begin
+         tempPlan := plan;
+         tempPlan.fixed := tempPlan.fixed + 1;
+         branches := (others => tempPlan);
+         branches(1).x(branches(1).fixed) := 1;
+
+         if (checkBudget(schme, branches(1))) then
+            branchesCount := branchesCount - 1;
+         end loop;
+
+         --calc low raitings
+         for i in branches'Range loop
+            tempLifeTime := lifeTime(scheme, tests, branches(i));
+            if tempLifeTime > maxLow then
+               maxLow := tempLifeTime;
+            end if;
+         end loop;
+
+         --calc high raitings
+         for i in branches'Range loop
+            tempPlan := bruteForce(scheme, tests, branches(i));--high raiting
+            tempLifeTime = lifeTime(scheme, tests, tempPlan);--high raiting
+            if tempLifeTime > maxLow then
+               tempPlan := recurcive(tempPlan);
+               tempLifeTime := lifeTime(scheme, tests, tempPlan);
+            end loop;
+         end loop;
+
+         return plan;--TODO:
+      end;
+
+   begin
+      return plan;--TODO:
+   end;
+
    function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan is
 
       protected manager is
@@ -57,15 +105,14 @@ package body Methods is
       end manager;
 
       task type bruteForceTask is
-         entry start(plan : in TPlan; fixed : in Integer);
+         entry start(plan : in TPlan);
       end bruteForceTask;
 
       task body bruteForceTask is
          maxPlan : TPlan;
       begin
-         accept start (plan : in TPlan; fixed : in Integer) do
+         accept start (plan : in TPlan) do
             maxPlan := plan;
-            fixPlanVariables(maxPlan, fixed);
          end start;
          maxPlan := bruteForce(scheme, tests, maxPlan);
          manager.putResult(maxPlan, lifeTime(scheme, tests, maxPlan));
@@ -78,8 +125,10 @@ package body Methods is
    begin
       manager.init;
       for t in 1..threads loop
+         tempPlan.fixed := Integer(Log(Float(threads), 2.0));
          temp := new bruteForceTask;
-         temp.start(tempPlan, Integer(Log(Float(threads), 2.0)));
+         temp.start(tempPlan);
+         tempPlan.fixed := 0;
          tempPlan := getNext(tempPlan);
       end loop;
       manager.getResult(tempPlan);
