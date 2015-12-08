@@ -24,6 +24,12 @@ package body Methods is
 
    function branchAndBound(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan is
 
+      type planData is record
+            plan : TPlan;
+            LowRating : Float;
+            HighRating : Float;
+      end record;
+
       maxPlan : TPlan := plan;
       maxLow : Float := lifeTime(scheme, tests, plan);
       maxHigh : Float := maxLow;
