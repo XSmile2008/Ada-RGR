@@ -22,7 +22,7 @@ package body Methods is
       return maxPlan;
    end;
 
-   function branchAndEdge(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan is
+   function branchAndBound(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan is
 
       maxPlan : TPlan := plan;
       maxLow : Float := lifeTime(scheme, tests, plan);
@@ -32,42 +32,44 @@ package body Methods is
 
          type TBranches is array (0..1) of TPlan;
          branches : TBranches;
-         branchesCount := 1;
+         branchesCount : Integer := 1;
          tempPlan : TPlan;
          tempLifeTime : Float;
       begin
+         --create branches
          tempPlan := plan;
          tempPlan.fixed := tempPlan.fixed + 1;
          branches := (others => tempPlan);
          branches(1).x(branches(1).fixed) := 1;
 
-         if (checkBudget(schme, branches(1))) then
-            branchesCount := branchesCount - 1;
-         end loop;
+         --check branch with 1
+         if (not checkBudget(scheme, branches(1))) then
+            branchesCount := branchesCount - 1;--if not in budget delete branch with 1
+         end if;
 
-         --calc low raitings
-         for i in branches'Range loop
+         --calc low ratings
+         for i in 0..branchesCount loop
             tempLifeTime := lifeTime(scheme, tests, branches(i));
             if tempLifeTime > maxLow then
                maxLow := tempLifeTime;
             end if;
          end loop;
 
-         --calc high raitings
-         for i in branches'Range loop
-            tempPlan := bruteForce(scheme, tests, branches(i));--high raiting
-            tempLifeTime = lifeTime(scheme, tests, tempPlan);--high raiting
-            if tempLifeTime > maxLow then
+         --calc high ratings
+         for i in 0..branchesCount loop
+            tempPlan := bruteForce(scheme, tests, branches(i));--high rating
+            tempLifeTime := lifeTime(scheme, tests, tempPlan);--high rating
+            if tempLifeTime > maxLow then--if high rating > max low rating
                tempPlan := recurcive(tempPlan);
                tempLifeTime := lifeTime(scheme, tests, tempPlan);
-            end loop;
+            end if;
          end loop;
 
          return plan;--TODO:
       end;
 
    begin
-      return plan;--TODO:
+      return recurcive(plan);--TODO:
    end;
 
    function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan is
