@@ -3,7 +3,7 @@ package body Plan is
    function hasNext(plan : in TPlan) return Boolean is
    begin
       for i in plan.x'Range loop
-         if (plan.x(i) = 0 and plan.b(i) = False) then return True; end if;
+         if (plan.x(i) = 0 and plan.f(i) = False) then return True; end if;
       end loop;
       return False;
    end;
@@ -12,13 +12,13 @@ package body Plan is
       i : Integer := 1;
       result : TPlan := plan;
    begin
-      while (result.x(i) = 1 or result.b(i) = True) loop
+      while (result.x(i) = 1 or result.f(i) = True) loop
          i := i + 1;
       end loop;
       result.x(i) := 1;
       while (i /= 1) loop
          i := i - 1;
-         if (result.b(i) = False) then
+         if (result.f(i) = False) then
             result.x(i) := 0;
          end if;
       end loop;
@@ -28,6 +28,19 @@ package body Plan is
    function getCount(bits : in Integer) return Integer is
    begin
       return 2**bits;
+   end;
+
+   procedure fixPlanVariables(plan : in out TPlan; count : in Integer) is
+      i : Integer := 1;
+      fixed : Integer := 0;
+   begin
+      while (i /= plan.x'Length and fixed /= count) loop
+         if (plan.f(i) = False) then
+            plan.f(i) := True;
+            fixed := fixed + 1;
+         end if;
+         i := i + 1;
+      end loop;
    end;
 
    procedure showPlan(plan : in TPlan; scheme : in TScheme) is --TODO: make for ParSec

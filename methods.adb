@@ -1,5 +1,8 @@
 package body Methods is
 
+   package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
+   use Float_Functions;
+
    function bruteForce(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan is
       maxLifeTime : Float := lifeTime(scheme, tests, plan);
       maxPlan : TPlan := plan;
@@ -22,59 +25,65 @@ package body Methods is
    function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan is
 
       protected manager is
+         procedure init;
          procedure putResult(plan : in TPlan; lifeTime : in Float);
-         procedure getResult(plan : out; lifeTime : out Float);
+         entry getResult(plan : out TPlan);
       private
          maxPlan : TPlan;
-         maxLifeTime : Integer;
+         maxLifeTime : Float;
+         activeThreads : Integer;
       end manager;
 
       protected body manager is
-         procedure putResult(plan : in TPlan; lifeTime : in Float) is
+         procedure init is
          begin
+            activeThreads := threads;
          end;
 
-         procedure getResult(plan : out; lifeTime : out Float) is
+         procedure putResult(plan : in TPlan; lifeTime : in Float) is
          begin
+            New_Line; showLifeTime(scheme, plan, lifeTime);
+            if lifeTime > maxLifeTime then
+               maxPlan := plan;
+               maxLifeTime := lifeTime;
+            end if;
+            activeThreads := activeThreads - 1;
+         end;
+
+         entry getResult(plan : out TPlan) when activeThreads = 0 is
+         begin
+            plan := maxPlan;
          end;
       end manager;
 
-
-
-
       task type bruteForceTask is
-         entry Start(plan : in TPlan);
-         entry Result(plan : out TPlan);
-      end;
+         entry start(plan : in TPlan; fixed : in Integer);
+      end bruteForceTask;
 
       task body bruteForceTask is
          maxPlan : TPlan;
       begin
-         accept Start (plan : in TPlan) do
+         accept start (plan : in TPlan; fixed : in Integer) do
             maxPlan := plan;
-         end Start;
+            fixPlanVariables(maxPlan, fixed);
+         end start;
          maxPlan := bruteForce(scheme, tests, maxPlan);
-         accept Result (plan : out TPlan) do
-            plan := maxPlan;
-         end Result;
+         manager.putResult(maxPlan, lifeTime(scheme, tests, maxPlan));
       end bruteForceTask;
 
-      type TBruteForceTasks is array (1..threads) of bruteForceTask;
-      bruteForceTasks : TBruteForceTasks;
 
-      maxPlan : TPlan;
-      maxLifeTime : Float;
-
+      type bruteForceTaskPtr is access bruteForceTask;
+      temp : bruteForceTaskPtr;
+      tempPlan : TPlan := plan;
    begin
-      for i in bruteForceTasks'Range loop
-         bruteForceTasks(i).Start(plan);
+      manager.init;
+      for t in 1..threads loop
+         temp := new bruteForceTask;
+         temp.start(tempPlan, Integer(Log(Float(threads), 2.0)));
+         tempPlan := getNext(tempPlan);
       end loop;
-
-      for i in bruteForceTasks'Range loop
-         bruteForceTasks(i).Result(newPlan);
-      end loop;
-
-      return newPlan;--TODO
+      manager.getResult(tempPlan);
+      return tempPlan;
    end;
 
 begin

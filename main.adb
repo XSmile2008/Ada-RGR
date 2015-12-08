@@ -27,7 +27,7 @@ procedure main is
       time : Float;
    begin
       plan.x := (others => 0);
-      plan.b := (19..20 => True, others => False);--TODO: block unused for this size of scheme
+      plan.f := (others => False);--TODO: block unused for this size of scheme
 
       scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
       tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
