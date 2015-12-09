@@ -12,8 +12,5 @@ package Plan is
 
    function hasNext(plan : in TPlan) return Boolean;
    function getNext(plan : in TPlan) return TPlan;
-   function getCount(bits : in Integer) return Integer;
-   procedure showPlan(plan : in TPlan; scheme : in TScheme);
-
    function index2d1d (scheme : TScheme; index_i, index_j : Integer) return Integer;
 end;

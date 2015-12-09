@@ -23,29 +23,6 @@ package body Plan is
       return result;
    end;
 
-   function getCount(bits : in Integer) return Integer is
-   begin
-      return 2**bits;
-   end;
-
-   procedure showPlan(plan : in TPlan; scheme : in TScheme) is --TODO: make for ParSec
-      index : Integer := 1;
-   begin
-      if (scheme.schemeType = TParSeq) then
-         for i in 1..scheme.m loop
-            for j in 1..scheme.ni(i) loop
-               Put(plan.x(index));
-               index := index + 1;
-            end loop;
-            New_Line;
-         end loop;
-      else
-         for i in 1..scheme.m loop
-            Put(plan.x(i));
-         end loop;
-      end if;
-   end;
-
    function index2d1d (scheme : TScheme; index_i, index_j : Integer) return Integer is
       index : Integer := 0;
    begin

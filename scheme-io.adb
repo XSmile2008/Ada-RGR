@@ -44,12 +44,47 @@ package body Scheme.IO is
       end if;
    end;
 
-   --TODO: to File
-   procedure showLifeTime ( scheme : in TScheme; plan : in TPlan; lifeTime : in Float) is
+   procedure showLifeTime (scheme : in TScheme; plan : in TPlan; lifeTime : in Float) is
+      index : Integer := 1;
    begin
-      showPlan(plan, scheme);
+      if (scheme.schemeType = TParSeq) then
+         for i in 1..scheme.m loop
+            for j in 1..scheme.ni(i) loop
+               Put(plan.x(index));
+               index := index + 1;
+            end loop;
+            New_Line;
+         end loop;
+      else
+         for i in 1..scheme.m loop
+            Put(plan.x(i));
+         end loop;
+      end if;
       New_Line;
       Put(lifeTime);
+   end;
+
+   procedure writeLifeTime (scheme : in TScheme; plan : in TPlan; lifeTime : in Float; fileName : in String) is
+      fileType : File_Type;
+      index : Integer := 1;
+   begin
+      Open(File => fileType, Mode => Out_File, Name => fileName);
+      if (scheme.schemeType = TParSeq) then
+         for i in 1..scheme.m loop
+            for j in 1..scheme.ni(i) loop
+               Put(fileType, plan.x(index));
+               index := index + 1;
+            end loop;
+            New_Line(fileType);
+         end loop;
+      else
+         for i in 1..scheme.m loop
+            Put(fileType, plan.x(i));
+         end loop;
+      end if;
+      New_Line;
+      Put(fileType, lifeTime);
+      Close(fileType);
    end;
 
    -----------------------------------------------------------------------ParSec------------------------------------------

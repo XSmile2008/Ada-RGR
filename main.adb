@@ -42,7 +42,7 @@ procedure main is
       --plan := Methods.branchesAndBounds(scheme, tests, plan);
       plan := Methods.multiThreaded(scheme, tests, plan, TBranchesAndBounds, 4);
       New_Line;Put_Line("-----------------------------------------------");
-      showPlan(plan, scheme);
+      showLifeTime(scheme, plan, 0.0);
    end;
 
    procedure testPlan is
@@ -54,7 +54,7 @@ procedure main is
       plan.x := (others => 0);
       plan.fixed := 12;
       for i in 1..16 loop
-         New_Line;showPlan(plan, scheme);
+         New_Line;showLifeTime(scheme, plan, 0.0);
          plan := getNext(plan);
       end loop;
    end;

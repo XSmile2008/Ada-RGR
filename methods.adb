@@ -126,7 +126,7 @@ package body Methods is
                end if;
             end if;
          end loop;
-         New_Line;New_Line; Put("size = ");Put(size);Put(" fixed = ");Put(maxBranch.plan.fixed);Put(" LowRating = ");Put(maxLowRating);Put(" HighRating = ");Put(maxBranch.HighRating);
+         --New_Line;New_Line; Put("size = ");Put(size);Put(" fixed = ");Put(maxBranch.plan.fixed);Put(" LowRating = ");Put(maxLowRating);Put(" HighRating = ");Put(maxBranch.HighRating);
       end loop;
       return maxBranch.plan;
    end;
