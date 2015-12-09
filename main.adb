@@ -15,7 +15,7 @@ procedure main is
    package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
    use Float_Functions;
 
-   schemeType : TSchemeType := TSeq;
+   schemeType : TSchemeType := TPar;
    schemeTypeString : Unbounded_String;
    path : String := "variants/";
    variant : String := "01";
@@ -27,7 +27,7 @@ procedure main is
       time : Float;
    begin
       plan.x := (others => 0);
-      plan.fixed := 2;--TODO: block unused for this size of scheme
+      plan.fixed := 10;--TODO: block unused for this size of scheme
 
       scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
       tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
@@ -40,9 +40,10 @@ procedure main is
 
       --plan := Methods.bruteForce(scheme, tests, plan);
       --plan := Methods.branchesAndBounds(scheme, tests, plan);
-      plan := Methods.multiThreaded(scheme, tests, plan, TBranchesAndBounds, 4);
+      plan := Methods.multiThreaded(scheme, tests, plan, TBruteForce, 4);
       New_Line;Put_Line("-----------------------------------------------");
-      showLifeTime(scheme, plan, 0.0);
+      showLifeTime(scheme, plan, lifeTime(scheme, tests, plan));
+      writeLifeTime(scheme, plan, lifeTime(scheme, tests, plan), path & "out.txt");
    end;
 
    procedure testPlan is

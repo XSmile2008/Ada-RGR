@@ -82,7 +82,7 @@ package body Scheme.IO is
             Put(fileType, plan.x(i));
          end loop;
       end if;
-      New_Line;
+      New_Line(fileType);
       Put(fileType, lifeTime);
       Close(fileType);
    end;
