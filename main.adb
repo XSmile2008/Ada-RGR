@@ -39,8 +39,8 @@ procedure main is
       New_Line;Put_Line("-----------------------------------------------");
 
       --plan := Methods.bruteForce(scheme, tests, plan);
-      plan := Methods.branchesAndBounds(scheme, tests, plan);
-      --plan := Methods.bruteForceMultiThreaded(scheme, tests, plan, 4);
+      --plan := Methods.branchesAndBounds(scheme, tests, plan);
+      plan := Methods.multiThreaded(scheme, tests, plan, TBranchesAndBounds, 4);
       New_Line;Put_Line("-----------------------------------------------");
       showPlan(plan, scheme);
    end;

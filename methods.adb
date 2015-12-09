@@ -40,15 +40,13 @@ package body Methods is
       size : Integer := 0;
 
       procedure add(branch : in out TBranchPtr) is
+         i : Integer := 1;
       begin
-         for i in 1..size loop
-            if branches(i) = null then
-               branches(i) := branch;
-               return;
-            end if;
+         while branches(i) /= null loop
+            i := i + 1;
          end loop;
-         size := size + 1;
-         branches(size) := branch;
+         branches(i) := branch;
+         if i > size then size := i; end if;
       end;
 
       function findMaxBranch return TBranchPtr is
@@ -92,7 +90,7 @@ package body Methods is
          procedure initBranch(branch : in out TBranchPtr) is
          begin
             branch.LowRating := lifeTime(scheme, tests, branch.plan);
-            branch.HighRating := lifeTime(scheme, tests, bruteForceMultiThreaded(scheme, tests, branch.plan, 4));
+            branch.HighRating := lifeTime(scheme, tests, bruteForce(scheme, tests, branch.plan));
          end;
 
       begin
@@ -124,7 +122,6 @@ package body Methods is
          for i in 1..size loop
             if (branches(i) /= null) then
                if  (branches(i).HighRating < maxLowRating) then
-                  Put_Line("nyan");
                   branches(i) := null;
                end if;
             end if;
@@ -136,7 +133,7 @@ package body Methods is
 
    -----------------------------------------------------------------------------------------------------------------------------------------------
 
-   function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan is
+   function multiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; method : in TMethod;  threads : in Integer) return TPlan is
 
       protected manager is
          procedure init;
@@ -170,30 +167,31 @@ package body Methods is
          end;
       end manager;
 
-      task type bruteForceTask is
+      task type methodTask is
          entry start(plan : in TPlan);
-      end bruteForceTask;
+      end methodTask;
 
-      task body bruteForceTask is
+      task body methodTask is
          maxPlan : TPlan;
       begin
          accept start (plan : in TPlan) do
             maxPlan := plan;
          end start;
-         maxPlan := bruteForce(scheme, tests, maxPlan);
+         if (method = TBruteForce) then maxPlan := bruteForce(scheme, tests, maxPlan);
+         else maxPlan := branchesAndBounds(scheme, tests, maxPlan);
+         end if;
          manager.putResult(maxPlan, lifeTime(scheme, tests, maxPlan));
-      end bruteForceTask;
+      end methodTask;
 
-
-      type bruteForceTaskPtr is access bruteForceTask;
-      temp : bruteForceTaskPtr;
+      type methodTaskPtr is access methodTask;
+      temp : methodTaskPtr;
       tempPlan : TPlan := plan;
       fixed : Integer := plan.fixed + Integer(Log(Float(threads), 2.0));
    begin
       manager.init;
       for t in 1..threads loop
          tempPlan.fixed := fixed;
-         temp := new bruteForceTask;
+         temp := new methodTask;
          temp.start(tempPlan);
          tempPlan.fixed := plan.fixed;
          if hasNext(tempPlan) then tempPlan := getNext(tempPlan); end if;--TODO: break

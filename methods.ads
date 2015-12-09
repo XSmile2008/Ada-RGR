@@ -10,7 +10,9 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 with Ada.Numerics.Generic_Elementary_Functions;
 
 package Methods is
+   type TMethod is (TBruteForce, TBranchesAndBounds);
+
    function bruteForce(scheme : in TScheme; tests : in TTests; plan : TPlan) return TPlan;
-   function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan;
    function branchesAndBounds(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan;
+   function multiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; method : in TMethod; threads : in Integer) return TPlan;
 end;
