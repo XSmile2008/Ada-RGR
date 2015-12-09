@@ -27,7 +27,7 @@ procedure main is
       time : Float;
    begin
       plan.x := (others => 0);
-      plan.fixed := 10;--TODO: block unused for this size of scheme
+      plan.fixed := 0;--TODO: block unused for this size of scheme
 
       scheme := readScheme(path & To_String(schemeTypeString) & "_" & variant & ".dat", schemeType);
       tests := readTests(path & To_String(schemeTypeString) & "_" & variant & ".tet");
@@ -39,11 +39,11 @@ procedure main is
       New_Line;Put_Line("-----------------------------------------------");
 
       --plan := Methods.bruteForce(scheme, tests, plan);
-      --plan := Methods.branchesAndBounds(scheme, tests, plan);
-      plan := Methods.multiThreaded(scheme, tests, plan, TBruteForce, 4);
+      plan := Methods.branchesAndBounds(scheme, tests, plan);
+      --plan := Methods.multiThreaded(scheme, tests, plan, TBruteForce, 4);
       New_Line;Put_Line("-----------------------------------------------");
       showLifeTime(scheme, plan, lifeTime(scheme, tests, plan));
-      writeLifeTime(scheme, plan, lifeTime(scheme, tests, plan), path & "out.txt");
+      writeLifeTime(scheme, plan, lifeTime(scheme, tests, plan), path & "res/" & To_String(schemeTypeString) & "_" & variant & ".res");
    end;
 
    procedure testPlan is

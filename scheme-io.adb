@@ -68,7 +68,7 @@ package body Scheme.IO is
       fileType : File_Type;
       index : Integer := 1;
    begin
-      Open(File => fileType, Mode => Out_File, Name => fileName);
+      Create(File => fileType, Mode => Out_File, Name => fileName);
       if (scheme.schemeType = TParSeq) then
          for i in 1..scheme.m loop
             for j in 1..scheme.ni(i) loop
