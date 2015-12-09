@@ -22,61 +22,114 @@ package body Methods is
       return maxPlan;
    end;
 
-   function branchAndBound(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan is
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
-      type planData is record
-            plan : TPlan;
-            LowRating : Float;
-            HighRating : Float;
+   function branchesAndBounds(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan is
+
+      type TBranch is record
+         plan : TPlan;
+         LowRating : Float;
+         HighRating : Float;
       end record;
 
-      maxPlan : TPlan := plan;
-      maxLow : Float := lifeTime(scheme, tests, plan);
-      maxHigh : Float := maxLow;
+      type TBranchPtr is access TBranch;
 
-      function recurcive(plan : in TPlan) return TPlan is
+      type TBranches is array (1..4096) of TBranchPtr;
 
-         type TBranches is array (0..1) of TPlan;
+      type TArrayList is record
          branches : TBranches;
-         branchesCount : Integer := 1;
-         tempPlan : TPlan;
-         tempLifeTime : Float;
+         size : Integer;
+      end record;
+
+      list : TArrayList;
+
+      procedure add(branch : in out TBranchPtr) is
       begin
-         --create branches
-         tempPlan := plan;
-         tempPlan.fixed := tempPlan.fixed + 1;
-         branches := (others => tempPlan);
-         branches(1).x(branches(1).fixed) := 1;
-
-         --check branch with 1
-         if (not checkBudget(scheme, branches(1))) then
-            branchesCount := branchesCount - 1;--if not in budget delete branch with 1
-         end if;
-
-         --calc low ratings
-         for i in 0..branchesCount loop
-            tempLifeTime := lifeTime(scheme, tests, branches(i));
-            if tempLifeTime > maxLow then
-               maxLow := tempLifeTime;
+         for i in 1..list.size loop
+            if list.branches(i) = null then
+               list.branches(i) := branch;
+               return;
             end if;
          end loop;
-
-         --calc high ratings
-         for i in 0..branchesCount loop
-            tempPlan := bruteForce(scheme, tests, branches(i));--high rating
-            tempLifeTime := lifeTime(scheme, tests, tempPlan);--high rating
-            if tempLifeTime > maxLow then--if high rating > max low rating
-               tempPlan := recurcive(tempPlan);
-               tempLifeTime := lifeTime(scheme, tests, tempPlan);
-            end if;
-         end loop;
-
-         return plan;--TODO:
+         list.size := list.size + 1;
+         list.branches(list.size) := branch;
       end;
 
+      function findMaxBranch return TBranchPtr is
+         maxBranch : TBranchPtr := null;
+      begin
+         for i in 1..list.size loop
+            if list.branches(i) /= null then
+               if (maxBranch /= null) then
+               if list.branches(i).HighRating > maxBranch.HighRating then
+                  maxBranch := list.branches(i);
+                  end if;
+               else
+                  maxBranch := list.branches(i);
+               end if;
+            end if;
+         end loop;
+         return maxBranch;
+      end;
+
+      function findMaxLowRating return Float is
+          maxLowRating : Float := 0.0;
+      begin
+         for i in 1..list.size loop
+            if list.branches(i) /= null then
+               if (maxLowRating /= 0.0) then
+               if list.branches(i).LowRating > maxLowRating then
+                  maxLowRating := list.branches(i).LowRating;
+                  end if;
+               else
+                  maxLowRating := list.branches(i).LowRating;
+               end if;
+            end if;
+         end loop;
+         return maxLowRating;
+      end;
+
+      procedure expand(parent : in TBranchPtr) is
+         branch0 : TBranchPtr;
+         branch1 : TBranchPtr;
+
+         procedure initBranch(branch : in out TBranchPtr) is
+         begin
+            branch.LowRating := lifeTime(scheme, tests, branch.plan);
+            branch.HighRating := lifeTime(scheme, tests, bruteForceMultiThreaded(scheme, tests, branch.plan, 4));
+         end;
+
+      begin
+         branch0 := parent;
+         branch0.plan.fixed := branch0.plan.fixed + 1;
+         initBranch(branch0);
+
+         branch1 := new TBranch;
+         branch1.plan := branch0.plan;
+         branch1.plan.x(branch1.plan.fixed) := 1;
+         if (checkBudget(scheme, branch1.plan)) then
+            initBranch(branch1);
+            add(branch1);
+         end if;
+      end;
+
+      maxBranch : TBranchPtr;
+      maxLowRating : Float := 0.0;
    begin
-      return recurcive(plan);--TODO:
+      list.size := 0;
+      maxBranch := new TBranch;
+      maxBranch.plan := plan;
+      add(maxBranch);
+      while maxBranch.plan.fixed /= maxBranch.plan.x'Length loop
+         expand(maxBranch);
+         maxBranch := findMaxBranch;
+         maxLowRating := findMaxLowRating;
+         New_Line;New_Line; Put("list.size = ");Put(list.size);Put(" fixed = ");Put(maxBranch.plan.fixed);Put(" LowRating = ");Put(maxLowRating);Put(" HighRating = ");Put(maxBranch.HighRating);
+      end loop;
+      return maxBranch.plan;
    end;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
    function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan is
 
@@ -130,14 +183,15 @@ package body Methods is
       type bruteForceTaskPtr is access bruteForceTask;
       temp : bruteForceTaskPtr;
       tempPlan : TPlan := plan;
+      fixed : Integer := plan.fixed + Integer(Log(Float(threads), 2.0));
    begin
       manager.init;
       for t in 1..threads loop
-         tempPlan.fixed := Integer(Log(Float(threads), 2.0));
+         tempPlan.fixed := fixed;
          temp := new bruteForceTask;
          temp.start(tempPlan);
-         tempPlan.fixed := 0;
-         tempPlan := getNext(tempPlan);
+         tempPlan.fixed := plan.fixed;
+         if hasNext(tempPlan) then tempPlan := getNext(tempPlan); end if;--TODO: break
       end loop;
       manager.getResult(tempPlan);
       return tempPlan;

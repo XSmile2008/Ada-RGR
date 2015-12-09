@@ -12,4 +12,5 @@ with Ada.Numerics.Generic_Elementary_Functions;
 package Methods is
    function bruteForce(scheme : in TScheme; tests : in TTests; plan : TPlan) return TPlan;
    function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan;
+   function branchesAndBounds(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan;
 end;

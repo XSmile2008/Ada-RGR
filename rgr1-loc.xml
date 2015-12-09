@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project >
+  <Project>
+    <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_file>
     <file_marker column=" 1" line=" 1" >
       <vfs_project />
       <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
@@ -245,9 +246,479 @@
       <vfs_project />
       <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project />
       <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 31" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 31" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 11" line=" 30" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 27" line=" 6" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 12" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 10" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 10" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 5" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 10" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 10" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 67" line=" 36" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 92" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 24" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 41" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 65" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 56" line=" 36" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 49" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 45" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 54" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 39" line=" 50" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 62" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 61" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 58" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 59" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 58" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 43" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 49" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 39" line=" 58" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 10" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme-func.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme-func.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme-func.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme-func.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >
