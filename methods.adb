@@ -22,7 +22,7 @@ package body Methods is
       return maxPlan;
    end;
 
------------------------------------------------------------------------------------------------------------------------------------------------
+   -----------------------------------------------------------------------------------------------------------------------------------------------
 
    function branchesAndBounds(scheme : in TScheme; tests : in TTests; plan : in TPlan) return TPlan is
 
@@ -36,36 +36,32 @@ package body Methods is
 
       type TBranches is array (1..4096) of TBranchPtr;
 
-      type TArrayList is record
-         branches : TBranches;
-         size : Integer;
-      end record;
-
-      list : TArrayList;
+      branches : TBranches;
+      size : Integer := 0;
 
       procedure add(branch : in out TBranchPtr) is
       begin
-         for i in 1..list.size loop
-            if list.branches(i) = null then
-               list.branches(i) := branch;
+         for i in 1..size loop
+            if branches(i) = null then
+               branches(i) := branch;
                return;
             end if;
          end loop;
-         list.size := list.size + 1;
-         list.branches(list.size) := branch;
+         size := size + 1;
+         branches(size) := branch;
       end;
 
       function findMaxBranch return TBranchPtr is
          maxBranch : TBranchPtr := null;
       begin
-         for i in 1..list.size loop
-            if list.branches(i) /= null then
+         for i in 1..size loop
+            if branches(i) /= null then
                if (maxBranch /= null) then
-               if list.branches(i).HighRating > maxBranch.HighRating then
-                  maxBranch := list.branches(i);
+                  if branches(i).HighRating > maxBranch.HighRating then
+                     maxBranch := branches(i);
                   end if;
                else
-                  maxBranch := list.branches(i);
+                  maxBranch := branches(i);
                end if;
             end if;
          end loop;
@@ -73,16 +69,16 @@ package body Methods is
       end;
 
       function findMaxLowRating return Float is
-          maxLowRating : Float := 0.0;
+         maxLowRating : Float := 0.0;
       begin
-         for i in 1..list.size loop
-            if list.branches(i) /= null then
+         for i in 1..size loop
+            if branches(i) /= null then
                if (maxLowRating /= 0.0) then
-               if list.branches(i).LowRating > maxLowRating then
-                  maxLowRating := list.branches(i).LowRating;
+                  if branches(i).LowRating > maxLowRating then
+                     maxLowRating := branches(i).LowRating;
                   end if;
                else
-                  maxLowRating := list.branches(i).LowRating;
+                  maxLowRating := branches(i).LowRating;
                end if;
             end if;
          end loop;
@@ -116,7 +112,7 @@ package body Methods is
       maxBranch : TBranchPtr;
       maxLowRating : Float := 0.0;
    begin
-      list.size := 0;
+      --list.size := 0;
       maxBranch := new TBranch;
       maxBranch.plan := plan;
       add(maxBranch);
@@ -124,12 +120,21 @@ package body Methods is
          expand(maxBranch);
          maxBranch := findMaxBranch;
          maxLowRating := findMaxLowRating;
-         New_Line;New_Line; Put("list.size = ");Put(list.size);Put(" fixed = ");Put(maxBranch.plan.fixed);Put(" LowRating = ");Put(maxLowRating);Put(" HighRating = ");Put(maxBranch.HighRating);
+         --delete all branches that have HighRating lower than maxLowRating
+         for i in 1..size loop
+            if (branches(i) /= null) then
+               if  (branches(i).HighRating < maxLowRating) then
+                  Put_Line("nyan");
+                  branches(i) := null;
+               end if;
+            end if;
+         end loop;
+         New_Line;New_Line; Put("size = ");Put(size);Put(" fixed = ");Put(maxBranch.plan.fixed);Put(" LowRating = ");Put(maxLowRating);Put(" HighRating = ");Put(maxBranch.HighRating);
       end loop;
       return maxBranch.plan;
    end;
 
------------------------------------------------------------------------------------------------------------------------------------------------
+   -----------------------------------------------------------------------------------------------------------------------------------------------
 
    function bruteForceMultiThreaded(scheme : in TScheme; tests : in TTests; plan : in TPlan; threads : in Integer) return TPlan is
 
