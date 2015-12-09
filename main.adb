@@ -15,10 +15,10 @@ procedure main is
    package Float_Functions is new Ada.Numerics.Generic_Elementary_Functions (Float);
    use Float_Functions;
 
-   schemeType : TSchemeType := TPar;
+   schemeType : TSchemeType := TParSeq;
    schemeTypeString : Unbounded_String;
    path : String := "variants/";
-   variant : String := "01";
+   variant : String := "04";
 
    procedure testScheme is
       scheme : TScheme;
@@ -39,8 +39,8 @@ procedure main is
       New_Line;Put_Line("-----------------------------------------------");
 
       --plan := Methods.bruteForce(scheme, tests, plan);
-      plan := Methods.branchesAndBounds(scheme, tests, plan);
-      --plan := Methods.multiThreaded(scheme, tests, plan, TBruteForce, 4);
+      --plan := Methods.branchesAndBounds(scheme, tests, plan);
+      plan := Methods.multiThreaded(scheme, tests, plan, TBranchesAndBounds, 4);
       New_Line;Put_Line("-----------------------------------------------");
       showLifeTime(scheme, plan, lifeTime(scheme, tests, plan));
       writeLifeTime(scheme, plan, lifeTime(scheme, tests, plan), path & "res/" & To_String(schemeTypeString) & "_" & variant & ".res");

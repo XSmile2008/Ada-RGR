@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_file>
+  <Project >
     <file_marker column=" 45" line=" 37" >
       <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
       <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
@@ -38,9 +37,61 @@
       <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
       <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme-io.ads</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 1" line=" 1" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
       <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme-func.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 14" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme-func.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 22" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/test_io.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/test_io.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 192" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/methods.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/plan.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 21" line=" 30" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/scheme-io.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 47" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 73" line=" 46" >
+      <vfs_project>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/rgr1.gpr</vfs_project>
+      <vfs_file>/Users/Starikov/Dropbox/courses/SMRZ_v_SP/Ada/RGR/main.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >
